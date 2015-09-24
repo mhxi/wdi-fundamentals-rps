@@ -24,6 +24,7 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
+    /* YOUR CODE HERE */
     var playerMove;
     if (move === null) {
         playerMove = getInput();
@@ -38,6 +39,7 @@ function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
+    /* YOUR CODE HERE */
     var computerMove;
     if (move === null) {
         computerMove = randomPlay();
@@ -52,6 +54,7 @@ function getWinner(playerMove,computerMove) {
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
+    /* YOUR CODE HERE */
     if (playerMove === computerMove) {
         winner = 'tie';
     } else if (playerMove === 'rock') {
@@ -59,7 +62,7 @@ function getWinner(playerMove,computerMove) {
     } else if (playerMove === 'paper') {
         computerMove === 'scissors' ? winner = 'computer' : winner = 'player';
     } else {
-        computerMove === 'rock' ? winner = 'computter' : winner = 'player';
+        computerMove === 'rock' ? winner = 'computer' : winner = 'player';
     }
     return winner;
 }
@@ -70,6 +73,16 @@ function playToFive() {
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    while (playerWins < 5 || computerWins < 5) {
+        getPlayerMove();
+        getComputerMove();
+        getWinner(playerMove,computerMove);
+        if (winner = 'player') {
+            playerWins ++;
+        } else if (winner = 'computer') {
+            computerWins ++;
+        }
+    }
     return [playerWins, computerWins];
 }
 
